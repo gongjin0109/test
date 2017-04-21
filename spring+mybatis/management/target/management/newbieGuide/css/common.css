@@ -1,0 +1,670 @@
+/*
+清除和重置start
+参考kissy框架的样式,修改其中默认字体，以及删除h1,h2,h3,h4,h5,h6的重置
+*/
+
+/* 清除内外边距 */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, strong,/* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+fieldset, lengend, button, input, textarea, /* form elements 表单元素 */
+th, td { /* table elements 表格元素 */
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+/* 设置默认字体 */
+html, body, button, input, select, textarea { /* for ie */
+    /*font-family: Helvetica, osx字体冬青黑体简体中文, Windows"微软雅黑", Linux 文泉驿微米黑, 通用sans-serif;*/
+    font-size: 12px;
+    font-family: Helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; /* 用 ascii 字符表示，使得在任何编码下都无问题 */
+}
+/*h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    font-size: 1rem;
+}*/
+address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
+code, kbd, pre, samp, tt { font-family: "Courier New", Courier, monospace; } /* 统一等宽字体 */
+small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
+
+/* 重置列表元素 */
+ul, ol { list-style: none; }
+
+/* 重置文本格式元素 */
+a { color: #888; text-decoration: none; }
+a:hover { text-decoration: none; }
+
+abbr[title], acronym[title] { /* 注：1.ie6 不支持 abbr; 2.这里用了属性选择符，ie6 下无效果 */
+    border-bottom: 1px dotted;
+    cursor: help;
+}
+
+q:before, q:after { content: ''; }
+
+/* 重置表单元素 */
+legend { color: #000; } /* for ie6 */
+fieldset, img { border: none; } /* img 搭车：让链接里的 img 无边框 */
+/* 注：optgroup 无法扶正 */
+button, input, select, textarea {
+    font-size: 100%; /* 使得表单元素在 ie 下能继承字体大小 */
+    outline: none;
+}
+
+/* 重置表格元素 */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* 重置 hr */
+hr {
+    border: none;
+    height: 1px;
+}
+
+/* 让非ie浏览器默认也显示垂直滚动条，防止因滚动条引起的闪烁 */
+html { overflow-y: scroll; }
+
+/*清除和重置end*/
+html, body {
+    height: 100%;
+}
+/* 
+ **页面布局上中下结构
+ */
+.wrapper {
+    margin: 0 auto;
+    min-width: 1100px;
+    background-color: #f7f7f7;
+}
+.wrapper .header {
+    margin: 0 auto;
+    min-width: 1100px;
+    font-size: 14px;
+}
+.wrapper .main {
+    margin: 20px auto;
+    width: 1100px;
+}
+
+/* 
+ *头部结构为上下结构
+ */
+.header .header-top-cont {
+    width: 1100px;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.header-top-cont ul {
+    float: left;
+    margin-top: 10px;
+}
+.header-top-cont ul li {
+    position: relative;
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+    margin-right: 10px;
+}
+.app {
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #ccc;
+    line-height: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.app i {
+    display: inline-block;
+    width: 13px;
+    height: 16px;
+    margin-right: 5px;
+    vertical-align: middle;
+    background: url(../images/iconCommon.png) -169px -18px no-repeat;
+}
+.weixin i,
+.weibo a {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    border-radius: 11px;
+    vertical-align: middle;
+    cursor: pointer;
+    background: #b2b2b2 url(../images/iconCommon.png) no-repeat;
+}
+.weixin i {
+    background-position: -14px -14px;
+}
+.weibo a {
+    background-position: -65px -14px;
+}
+.app:hover,
+.weibo a:hover,
+.weixin i:hover {
+    background-color: #f70;
+    color: #fff;
+}
+.appdownload-block {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 250px;
+    background-color: #fff;
+}
+.appdownload-block img {
+    float: left;
+    width: 130px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.appdownload-block a {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    height: 20px;
+    width: 78px;    
+    padding-left: 10px;
+    line-height: 20px;
+    border-radius: 5px;
+    color: #666;
+    font-size: 14px;
+    background-color: #D5D5D5;
+}
+.appdownload-block a.iOS {
+    margin-top: 50px;
+}
+.appdownload-block a:hover {
+    color: #f70;
+} 
+.app:hover .appdownload-block {
+    display: block;
+}
+.weixin-block {
+    display: none;
+    position: absolute;
+    left: -63px;
+    top: 22px;
+    width: 146px;
+}
+.weixin:hover .weixin-block { display: block; }
+
+.login-infor {
+    float: right;
+    margin-top: 10px;
+}
+.login-infor .hotline,
+.login-infor .message,
+.login-infor .logout,
+.login-infor .username   {
+    display: inline-block;
+    line-height: 20px;
+    margin-left: 30px;
+}
+.hotline i {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    vertical-align: middle;
+    background: url(../images/iconCommon.png) -116px -16px no-repeat;
+}
+.message i {
+    display: inline-block;
+    min-width: 16px;
+    height: 20px;
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-left: 5px;
+    color: #fff;
+    text-align: center;
+    font-style: normal;
+    border-radius: 10px;
+    background-color: #f70;
+    vertical-align: middle;
+}
+.header-nav {
+    height: 90px;
+    border-bottom: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
+    background-color: #fff;
+}
+.header-nav-cont {
+    width: 1100px;
+    height: 90px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.header-nav-cont .logo-block {
+    display: table-cell;
+    width: 30%;
+    vertical-align: middle;
+    height: 90px;
+}
+.logo-block img {
+    vertical-align: middle;
+    width: auto;
+}
+.header-nav-cont .nav-ul {
+    display: table-cell;
+    vertical-align: middle;
+    height: 90px;
+    width: 70%;
+    text-align: right;
+}
+.nav-ul li {
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+    width: 120px;
+}
+.nav-ul li a {
+    font-size: 18px;
+    color: #333;
+}
+.nav-ul li a:hover,
+.nav-ul li.checked a  {
+    color: #f70;
+} 
+/* 
+ *中间结构为左右结构
+ *左侧导航栏
+ *右侧主体内容
+ */
+ .main .nav {
+    float: left;
+    margin-right: 19px;
+    width: 200px;
+    border: 1px solid #eee;
+    background-color: #fff;
+ }
+ .main .content {
+    margin-left: 220px;
+    min-height: 660px;
+    border: 1px solid #eee;
+    background-color: #fff;
+}
+ /* 
+  *左侧导航栏样式
+  */
+.nav dt {
+    height: 60px;
+    line-height: 60px;
+    font-size: 16px;
+    color: #777;
+    text-align: center;
+    background-color: #eee;
+}
+.nav dt i {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    margin-left: -30px;
+    vertical-align: middle;
+    background: url(../images/icons.png) no-repeat;
+}
+.nav .my-account i {
+    background-position: 0 0;
+}
+.nav  .journal-account i {
+    background-position: -28px 0;
+}
+.nav .my-rewards i {
+    background-position: -56px 0;
+}
+.nav a {
+    display: block;
+    height: 60px;
+    border-left: 4px solid #fff;
+    line-height: 60px;
+    text-align: center;
+    font-size: 14px;
+    color: #454545;
+    background-color: #fff;
+}
+.nav dd.checked a,
+.nav a:hover {
+    border-left: 4px solid #f70;
+    color: #f70;
+} 
+/*右侧content里公用头部样式*/
+.cont-tit {
+    padding-left: 30px;
+    height: 60px;
+    line-height: 60px;
+    color: #454545;
+    font-size: 16px;
+    background: #eee;
+}
+.cont-tit .tip {
+    padding-left: 88px;
+    font-size: 14px;
+    color: #888;
+}
+
+/* 按钮样式 */
+.btn {
+    display: inline-block;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    color: #fff;
+    background-color: #f70;
+    cursor: pointer;
+}
+.btn:hover { background-color: #f60;}
+
+/* 时间选择样式 */
+.time-filter {
+    display: inline-block;
+    vertical-align: middle;
+    
+}
+.time-filter input {
+    width: 98px;
+    height: 28px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 28px;
+}
+.time-filter .devide-txt {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.time-filter i {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background: url(../images/icons.png) -8px -190px no-repeat;
+}
+
+/* 筛选按钮样式 */
+.filter-label {
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #666;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+}
+.filter-label:hover, 
+.filter-label.checked {
+    color: #fff;
+    background-color: #f70;
+}
+
+/* 表格样式 */
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+table thead {
+    height: 26px;
+    line-height: 26px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #eee;
+}
+thead td:first-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+thead td:last-child {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+tbody td {
+    padding-top: 25px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/*分页样式*/
+.pagination-block {
+    margin: 20px auto;
+    text-align: center;
+}
+.pagination { font-size: 0;}
+.pagination li {
+    display: inline-block;
+    vertical-align: middle;
+    *zoom: 1;
+    *display: inline;
+    margin-left: 10px;
+    font-size: 14px;
+    line-height: 24px;
+}
+.pagination li a {
+    display: inline-block;    
+    height: 22px;
+    padding-left: 7px;
+    padding-right: 7px;
+    border: 1px solid #ccc;
+    line-height: 22px;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+}
+.pagination li.disabled a {
+    cursor: not-allowed;
+    color: #bbb;
+}
+.pagination li.checked a,
+.pagination li:not(.disabled) a:hover {
+    background-color: #f70;
+    color: #fff;
+    border-color: #f70;
+}
+.pagination .total { 
+    margin-left: 18px;
+    color: #888;
+}
+.pagination .total span { margin: 0 2px;}
+.pagination .skip { margin-left: 30px;}
+.pagination .skip .target-page {
+    display: inline-block;
+    vertical-align: middle;
+    width: 30px;
+    height: 24px;
+    margin: 0 4px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    text-align: center;
+}
+.pagination .skip .page-skip {
+    padding: 0 6px;
+    margin-left: 8px;
+    border-radius: 2px;
+    border-color: #f70;
+    background: #f70;
+    color: #fff;
+}
+.pagination .skip .page-skip:hover { background: #f60;}
+
+/*弹框公共样式*/
+.pop-masker {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .5;
+    filter: alpha(opacity=50);
+     display: none;
+    z-index: 10;
+}
+.pop-block {
+    position: fixed;
+    left: 50%;
+    margin-left: -375px;
+    top: 100px;
+    width: 750px;
+    border-radius: 12px;
+    background: #fff;
+    color: #888;
+    font-size: 16px;
+    overflow: hidden;
+    display: none;
+    z-index: 11;
+}
+.pop-block .pop-top {
+    position: relative;
+    height: 60px;
+    background: #EEE;
+}
+.pop-top h2 {
+    line-height: 60px;
+    font-size: 18px;
+    text-align: center;
+}
+.pop-top .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background: url(../images/icons.png) no-repeat -224px -6px;
+    cursor: pointer;
+}
+.pop-cont .head-line {
+    padding-top: 30px;
+    padding-bottom: 12px;
+    text-align: center;
+    line-height: 20px;
+}
+.pop-cont .infor-line {
+    clear: both;
+    padding-top: 10px;
+    padding-left: 79px;
+    line-height: 44px;
+}
+.pop-cont .infor-line label {
+    float: left;
+    width: 160px;
+    text-align: right;  
+}
+.pop-cont .infor-line .infor { 
+    float: left;
+    min-width: 150px;
+    color: #aaa;
+}
+.pop-cont .infor-line input,
+.pop-cont .infor-line select {
+    float: left;
+    width: 330px;
+    height: 42px;
+    padding-left: 10px;
+    border: 1px solid #E4E4E4;
+    border-radius: 4px;
+    color: #555;
+    font-size: 16px;
+    font-family: "\5FAE\8F6F\96C5\9ED1";
+}
+.pop-cont .infor-line select { width: 342px;}
+.pop-cont .infor-line input.short { width: 142px;}
+.pop-cont .infor-line input.middle { width: 210px;}
+/*图形验证码*/
+.pop-cont .infor-line .img-code {
+    float: left;
+    width: 82px;
+    height: 44px;
+    margin-left: 24px;
+    margin-right: 8px;
+}
+.pop-cont .infor-line .change-code { 
+    float: left;
+    color: #888;
+}
+.pop-cont .infor-line .error-tip {
+    clear: both;
+    width: 350px;
+    padding-left: 160px;
+    padding-top: 3px;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FF2A00;
+}
+.pop-cont .infor-line .send-code {
+    float: left;
+    width: 102px;
+    height: 44px;
+    margin-left: 18px;
+    background: #75B2F9;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+}
+.pop-cont .infor-line .send-code:hover { background: #73B9FF;}
+.pop-cont .infor-line .send-code.disabled { background: #ccc;}
+.pop-bot {
+    clear: both;
+    padding-top: 25px;
+    padding-bottom: 32px;
+    text-align: center;
+}
+.pop-bot > input,
+.pop-bot > a {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 152px;
+    height: 45px;
+    border: none;
+    background: #f70;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.pop-bot > a { line-height: 43px;}
+.pop-bot > input.white,
+.pop-bot > a.white {
+    width: 152px;
+    height: 45px;
+    border: 1px solid #f70;
+    background: none;
+    color: #f70;
+}
+.pop-bot > input:hover,
+.pop-bot > a:hover { background: #f60;}
+.pop-bot > input.white:hover,
+.pop-bot > a.white:hover { background: #f7f7f7;}
+.pop-bot .success-tip {
+    text-align: center;
+    color: #f70;
+    line-height: 45px;
+}
+.pop-bot .success-tip i,
+.pop-bot .success-tip span {
+    display: inline-block;
+    vertical-align: middle;
+}
+.pop-bot .success-tip i {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    background: url(../images/icons.png) no-repeat -139px -79px;
+}

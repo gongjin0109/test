@@ -1,0 +1,198 @@
+.m-wrap {
+    width: 100%;
+}
+.m-wrap1 {
+    height: 596px;
+    background: url("../images/newbieGuide/guide05.png") no-repeat center;
+}
+.m-wrap2 {
+    height: 743px;
+    background: #fff;
+}
+.m-wrap3 {
+    height: 664px;
+    background: url("../images/newbieGuide/guide07.png") no-repeat center;
+}
+.m-wrap4 {
+    height: 592px;
+    background: #fff;
+}
+.m-wrap5 {
+    height: 714px;
+    background: url("../images/newbieGuide/guide09.png") no-repeat center;
+}
+.m-wrap6 {
+    height: 675px;
+    background: #fff;
+}
+.m-wrap7 {
+    height: 389px;
+    background: url("../images/newbieGuide/guide11.png") no-repeat center;
+}
+.s-wrap {
+    width: 1100px;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.m-wrap3>.s-wrap {
+    position: relative;
+    background: url("../images/newbieGuide/guide01.png") no-repeat center 195px;
+}
+.s-wrap-title {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 65px;
+    font-weight: 600;
+    color: #444;
+}
+.s-wrap-title2 {
+    color: #fff;
+}
+.model-p {
+    width: 1035px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 40px;
+    margin: 10px auto 0;
+    color: #888;
+    letter-spacing: 2px;
+}
+.model-img {
+    display: block;
+    width: 1078px;
+    height: 469px;
+    margin: 25px auto 0;
+}
+.model-p2 {
+    color: #fff;
+}
+.img-explain {
+    position: absolute;
+    width: 250px;
+}
+.img-explain1 {
+    left: 115px;
+    top: 212px;
+}
+.img-explain2 {
+    left: 232px;
+    top: 360px;
+}
+.img-explain3 {
+    left: 550px;
+    top: 430px;
+}
+.img-explain4 {
+    left: 882px;
+    top: 500px;
+}
+.img-explain p {
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+}
+.img-explain .p1 {
+    font-size: 16px;
+}
+.img-explain .p2 {
+    font-size: 30px;
+}
+.safeguard-box {
+    width: 1050px;
+    height: 380px;
+    margin: 60px auto 0;
+}
+.safeguard {
+    width: 350px;
+    height: 380px;
+    float: left;
+    overflow: hidden;
+}
+.safeguard1 {
+    background: url("../images/newbieGuide/guide19.png") no-repeat center top;
+}
+.safeguard2 {
+    background: url("../images/newbieGuide/guide02.png") no-repeat center top;
+}
+.safeguard3 {
+    background: url("../images/newbieGuide/guide00.png") no-repeat center top;
+}
+.safeguard h3 {
+    font-size: 26px;
+    text-align: center;
+    line-height: 2em;
+    color: #555;
+    margin-top: 195px;
+}
+.safeguard p {
+    font-size: 18px;
+    text-align: center;
+    line-height: 30px;
+    color: #888;
+}
+.addinterest-box {
+    width: 900px;
+    height: 420px;
+    margin: 40px auto 0;
+}
+.addinterest {
+    width: 450px;
+    height: 420px;
+    float: left;
+}
+.addinterest1 {
+    background: url("../images/newbieGuide/guide17.png") no-repeat center top;
+}
+.addinterest2 {
+    background: url("../images/newbieGuide/guide04.png") no-repeat center top;
+}
+.addinterest p {
+    font-size: 30px;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    margin-top: 340px;
+}
+.flow-img {
+    display: block;
+    margin: 60px auto 115px;
+}
+.btn-a {
+    display: block;
+    width: 500px;
+    height: 82px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 82px;
+    color: #fff;
+    margin: 0 auto;
+    background: #ff474b;
+    border-bottom: 4px solid #ed282c;
+    -webkit-border-radius: 12px;
+    border-radius: 12px;
+}
+.award-box {
+    width: 100%;
+    margin-top: 40px;
+    overflow: hidden;
+}
+.award {
+    width: 20%;
+    height: 235px;
+    float: left;
+}
+.award-img-box {
+    width: 100%;
+    height: 155px;
+    text-align: center;
+    line-height: 155px;
+    vertical-align: middle;
+}
+.award p {
+    padding: 10px 25px 0;
+    font-size: 14px;
+    text-align: center;
+    line-height: 24px;
+    color: #fff;
+}
